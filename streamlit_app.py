@@ -23,12 +23,13 @@ session = cnx.session()
 # Select
 df = session.table(
     "smoothies.public.fruit_options"
-).select(col('FRUIT_NAME'))
+).select(col('FRUIT_NAME'), col("SEARCH_ON"))
 ingredients_list = st.multiselect(
     'Choose up to 5 ingredients',
     df,
     max_selections=5
 )
+st.stop()
 
 if ingredients_list:
     ingredients_string = ''
