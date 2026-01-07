@@ -20,16 +20,17 @@ st.write("The name on your Smoothie will be:", name_on_order)
 cnx = st.connection('Snowflake')
 session = cnx.session()
 
-# Select
+pd_df = df.to_pandas()
 df = session.table(
     "smoothies.public.fruit_options"
 ).select(col('FRUIT_NAME'), col("SEARCH_ON"))
+
+# Select
 ingredients_list = st.multiselect(
     'Choose up to 5 ingredients',
-    df,
+    pd_df["FRUIT_NAME"],
     max_selections=5
 )
-pd_df = df.to_pandas()
 
 if ingredients_list:
     ingredients_string = ''
