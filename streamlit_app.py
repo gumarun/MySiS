@@ -29,9 +29,7 @@ ingredients_list = st.multiselect(
     df,
     max_selections=5
 )
-
 pd_df = df.to_pandas()
-st.dataframe(pd_df)
 
 if ingredients_list:
     ingredients_string = ''
