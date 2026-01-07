@@ -32,7 +32,6 @@ ingredients_list = st.multiselect(
 
 pd_df = df.to_pandas()
 st.dataframe(pd_df)
-st.stop()
 
 if ingredients_list:
     ingredients_string = ''
