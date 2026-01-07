@@ -29,6 +29,9 @@ ingredients_list = st.multiselect(
     df,
     max_selections=5
 )
+
+pd_df = df.to_pandas()
+st.dataframe(pd_df)
 st.stop()
 
 if ingredients_list:
