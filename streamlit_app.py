@@ -1,13 +1,19 @@
+import requests
+
 import streamlit as st
 from snowflake.snowpark.functions import col
 
+
+smoothiefroot_response = requests.get("https://my.smoothiefroot.com/api/fruit/watermelon")
+st.text(smoothiefroot_response)
+
 # Header
 st.title(
-    f"My Parents New Healthy Diner"
+    f":cup_with_straw: Customize Your Smoothie!:cup_with_straw:"
 )
 st.write(
   """
-  Break Fast Menu
+  Choose the fruits you want in your custom Smoothie!
   """
 )
 
