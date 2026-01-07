@@ -49,7 +49,7 @@ if ingredients_list:
         if 'error' in data:
             st.warning(f"Nutrition info for '{fruit_chosen}' is not available.")
         else:
-            st.dataframe(data=smoothiefroot_response.json(), use_container_width=True)
+            st.dataframe(data=data, use_container_width=True)
 
     my_insert_stmt = f"""
     INSERT INTO smoothies.public.orders (ingredients, name_on_order)
