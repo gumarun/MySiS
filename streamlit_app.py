@@ -42,7 +42,7 @@ if ingredients_list:
 
         st.subheader(fruit_chosen + 'Nutrition Infomaion')
         st.write("DEBUG search_on =", repr(search_on))
-        res = requests.get(
+        response = requests.get(
             f"https://my.smoothiefroot.com/api/fruit/{search_on}"
         )
         data = response.json()
